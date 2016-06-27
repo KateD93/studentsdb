@@ -1,0 +1,43 @@
+/*Global Styles*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+
+}
+.alert {
+	margin: 20px 0 5px 0;
+	border-top: 2px solid #87CEEB ;
+}
+
+#sub-header {
+	font-weight: bold;	
+} 
+.table {
+	margin-top: 20px;
+}
+
+
+
+
+
+
+/* Groups Selector */
+#group-selector {
+	margin-top: 30px;
+}
+
+#group-selector select {
+	margin: 0;
+	width: 80%;
+	background-color: #ffffff;
+	border: 2px solid #87CEEB;
+	height: 30px;
+	line-height: 30px;
+	color: #555555;
+}
+/*Footer Styles*/
+#footer {
+	margin-top: 10px;
+	border-top: 2px solid #87CEEB;
+	padding-top: 5px;
+}
+
