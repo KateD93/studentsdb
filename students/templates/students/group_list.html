@@ -2,13 +2,13 @@
 
 {% load static from staticfiles %}
 
-{% block meta_title %} Студенти  {% endblock meta_title %} 
+{% block meta_title %}Групи{% endblock meta_title %}
 
-{% block title %} База студентів {% endblock title %}
+{% block title %}Групи{% endblock title %}
 
 {% block content %}
 
-<a href='{% url "students_add" %}' class="btn btn-primary"> Додати Студента</a>
+<a href='{% url "groups_add" %}' class="btn btn-primary">Додати Групу</a>
 
 <!-- Start Students Listing -->
         {% if groups %}
@@ -22,34 +22,34 @@
             </tr>
           </thead>
           <tbody>
-            {{ forloop.counter }} 
-            <tr> 
-              <td><a href='{% url "group_edit" group.id %}'> {{ group.id }}</a> </td>
-              <td><a href='{% url "students_edit" group.leader.name %}'> {{ group.leader.name}} </td>
-              <td>
-                   <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Дія
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li role="presentation">
-                          <a role="menuitem" tabindex="-1" href='{% url "groups_edit" group.id %}'>Редагувати</a>
-                        </li>
-                        <li role="presentation">
-                          <a role="menuitem" tabindex="1" href='{% url "groups_delete" group.id %}'>Видалити</a>
-                        </li>
-                      </ul>
-                    </div>
+                {% for group in groups %}
+                <tr>
+                  <td> {{ group.id }} </td>
+                  <td><a href='{% url "groups_edit" group.id %}'> {{ group.id }}</a></td>
+                  <td><a href='{% url "groups_edit" group.id %}'> {{ group.leader.first_name }} {{ group.leader.last_name }} </td>
+                  <td>
+                      <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Дія
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="-1" href='{% url "groups_edit" group.id %}'>Редагувати</a>
+                            </li>
+                            <li role="presentation">
+                              <a role="menuitem" tabindex="1" href='{% url "groups_delete" group.id %}'>Видалити</a>
+                            </li>
+                          </ul>
+                      </div>
+                  </td>
+                {% endfor %}
         {% else %}
         <p> Поки немає груп у базі</p>
         {% endif %}
 
-        <nav>
-          <ul class="pagination">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">Далі</a></li>
-          </ul>
-        </nav>
-
+        <!--Navigation-->
+        <div>
+          {% include 'students/pagination.html' %}
+        </div>
+        <!-- End Container -->
 {% endblock content %}
