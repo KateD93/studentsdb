@@ -1,15 +1,14 @@
-<!-- Start Students Listing -->
-
 {% extends "students/base.html" %}
 
 {% load static from staticfiles %}
 
 {% block meta_title %} Студенти  {% endblock meta_title %} 
 
-{% block title %} База студентів {% end block title %}
+{% block title %} База студентів {% endblock title %}
 
 {% block content %}
-<a href="{% url "students_add" %}" class="btn btn-primary"> Додати Студента </a>
+
+<a href='{% url "students_add" %}' class="btn btn-primary"> Додати Студента</a>
 
 <!-- Start Students Listing -->
         {% if groups %}
@@ -25,29 +24,25 @@
           <tbody>
             {{ forloop.counter }} 
             <tr> 
-              <td><a href="url "group_edit" group.id"> {{ group.id }}</a> </td>
-              <td><a href="url "students_edit" group.leader.name"> {{ group.leader.name}} </td>
+              <td><a href='{% url "group_edit" group.id %}'> {{ group.id }}</a> </td>
+              <td><a href='{% url "students_edit" group.leader.name %}'> {{ group.leader.name}} </td>
               <td>
-               <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Дія
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu"> 
-                    <li role="presentation">
-                      <a role="menuitem" tabindex="-1" href="#">Відвідування</a>
-                    </li>
-                    <li role="presentation"> 
-                      <a role="menuitem" tabindex="-1" href="#">Редагувати</a>
-                    </li>
-                    <li role="presentation"> 
-                      <a role="menuitem" tabindex="1"href="#">Видалити</a>
-                    </li>
-                  </ul>
-                </div>
-
+                   <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Дія
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href='{% url "groups_edit" group.id %}'>Редагувати</a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="1" href='{% url "groups_delete" group.id %}'>Видалити</a>
+                        </li>
+                      </ul>
+                    </div>
         {% else %}
         <p> Поки немає груп у базі</p>
-        {% end if %}
+        {% endif %}
 
         <nav>
           <ul class="pagination">
@@ -57,7 +52,4 @@
           </ul>
         </nav>
 
-    {% end block content %}
-    
-  </div>
-  <!-- End Container -->
+{% endblock content %}
