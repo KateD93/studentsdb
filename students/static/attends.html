@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Сервіс Обліку Студентів</title>
+  <meta name="description" value="Система Обліку Студентів Навчального Закладу"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Include Styles-->
+  <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous">
+  <link rel="stylesheet" 
+        href="./css/main.css">
+</head>
+<body>
+ 
+  <!--Start Container-->
+  <div class="container">
+  
+    <!-- Start Header -->
+    <div class="row" id="header"> 
+      <!-- Logo -->
+      <div class="col-xs-8">
+        <h1> Сервіс обліку студентів </h1>
+      </div>
+      <!-- Groups Selector -->
+      <div class="col-xs-4" id="group-selector">
+        <strong> Група:</strong>
+        <select>
+          <option value=""> Всі студенти </option>
+          <option value=""> ТК - 21, Подолянчук Світлана </option> 
+          <option value=""> ТК - 22, Девда Максим </option> 
+        </select>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Start SubHeader -->
+    <div class="row" id="sub-header">
+      <div class="col-xs-12">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation"><a href="#">Студенти</a></li>
+          <li role="presentation" class="active"><a href="#">Відвідування</a></li>
+          <li role="presentation"><a href="#">Групи</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End SubHeader -->
+
+
+    
+    <!-- Start Main Page Content -->
+    <div class="row" id="content-columns">
+      <div class="col-xs-12" id="content-column">
+        <!-- Status Message --> 
+      <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+        Зміни проведено успішно!
+      </div>  
+      <h2> Облік відвідування </h2>
+
+      
+
+      <!-- Start  attending journal -->
+      <table class="table table-condensed table-hover table-striped table-bordered ">
+      <thead>
+            <tr>
+              <th><a href="#">№</a></th>
+              <th> <a href="#">Студент &uarr;</a></th>
+              <th>Ср<p>1</p></th>
+              <th>Чт<p>2</p></th>
+              <th>Пт<p>3</p></th>
+              <th>Сб<p>4</p></th>
+              <th>Нд<p>5</p></th>
+              <th>Пн<p>6</p></th>
+              <th>Вт<p>7</p></th>
+              <th>Ср<p>8</p></th>
+              <th>Чт<p>9</p></th>
+              <th>Пт<p>10</p></th>
+              <th>Сб<p>11</p></th>
+              <th>Нд<p>12</p></th>
+              <th>Пн<p>13</p></th>
+              <th>Вт<p>14</p></th>
+              <th>Ср<p>15</p></th>
+              <th>Чт<p>16</p></th>
+              <th>Пт<p>17</p></th>
+              <th>Сб<p>18</p></th>
+              <th>Нд<p>19</p></th>
+              <th>Пн<p>20</p></th>
+              <th>Вт<p>21</p></th>
+              <th>Ср<p>22</p></th>
+              <th>Чт<p>23</p></th>
+              <th>Пт<p>24</p></th>
+              <th>Сб<p>25</p></th>
+              <th>Нд<p>26</p></th>
+              <th>Пн<p>27</p></th>
+              <th>Вт<p>28</p></th>
+              <th>Ср<p>29</p></th>
+              <th>Чт<p>30</p></th>
+              <th>Пт<p>31</p></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="#">Денищич Катерина</a></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+            </tr> 
+            <tr>
+              <td>2</td>
+              <td><a href="#">Девда Максим</a></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+            </tr> 
+            <tr>
+              <td>3</td>
+              <td><a href="#">Подолянчук Світлана</a></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"checked="true"></label></td>
+              <td><label><input type="checkbox"></label></td>
+              <td><label><input type="checkbox"></label></td>
+            </tr> 
+          </tbody>
+        </table>
+
+    <!-- Start Footer -->
+    <div class="row" id="footer">
+      <div class="col-xs-12">
+        &copy; 2016 Сервіс обліку студентів
+      </div>
+    </div>
+      <!-- End Footer -->
+ 
+  </div>
+  <!-- End Container -->
+
+<!-- Javascripts Inclusion -->
+  <script 
+    src="https://code.jquery.com/jquery-2.1.1.js"  
+    integrity="sha256-FA/0OOqu3gRvHOuidXnRbcmAWVcJORhz+pv3TX2+U6w="
+    crossorigin="anonymous">
+  </script>
+  <script 
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous">
+  </script>
+</body>
+</html>
