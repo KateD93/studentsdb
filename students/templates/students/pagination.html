@@ -1,7 +1,21 @@
 <nav>
   <ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li class="active"><a href="#">2</a></li>
-    <li><a href="#">Далі</a></li>
+    {% if pages.has_previous %}
+      <li class="arrow"><a href="?page={{ pages.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="arrow disabled"><a href="">&laquo;</a></li>
+    {% endif %}
+    {% for page in pages.paginator.page_range %}
+      {% if page == pages.number %}
+          <li class="current"><a href="?page={{ page }}">{{ page }}</a></li>
+      {% else %}
+          <li><a href="?page={{ page }}">{{ page }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if pages.has_next %}
+      <li class="arrow"><a href="?page={{ pages.next_page_number }}">&raquo;</a></li>
+    {% else %}
+       <li class="arrow disabled"><a href="">&raquo;</a></li>
+    {% endif %}
   </ul>
 </nav>
