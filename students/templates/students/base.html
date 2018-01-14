@@ -1,6 +1,5 @@
 {% load static from staticfiles %}
 
-
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -22,7 +21,6 @@
 {% block extra_css %} {% endblock extra_css %} 
 
 </head>
-
 
 <body>
  
@@ -51,9 +49,15 @@
     <div class="row" id="sub-header">
       <div class="col-xs-12">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" {% if request.path =='/' %} class="active" {% endif %}><a href='{% url "home" %}'>Студенти</a></li>
-          <li role="presentation" {% if '/journal' in request.path %} class="active" {% endif %}><a href="/journal">Відвідування</a></li>
-          <li role="presentation" {% if '/groups' in request.path %} class="active" {% endif %}><a href='{% url "groups" %}'>Групи</a></li>
+          <li role="presentation" {% if request.path == "/" %} class="active" {% endif %}>
+            <a href='{% url "home" %}'>Студенти</a>
+          </li>
+          <li role="presentation" {% if "/journal" in request.path %} class="active" {% endif %}>
+            <a href="/journal">Відвідування</a>
+          </li>
+          <li role="presentation"{% if "/groups" in request.path %} class="active" {% endif %}>
+            <a href='{% url "groups" %}'>Групи</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -85,7 +89,7 @@
   <!-- End Container -->
 
 <!-- Javascripts Inclusion -->
-  <script 
+  <script
     src="https://code.jquery.com/jquery-2.1.1.js"  
     integrity="sha256-FA/0OOqu3gRvHOuidXnRbcmAWVcJORhz+pv3TX2+U6w="
     crossorigin="anonymous">
