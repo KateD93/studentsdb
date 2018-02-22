@@ -1,5 +1,4 @@
 #-*- coding: utf-8 -*-
-
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -38,6 +37,7 @@ def students_list(request):
 
 
 def students_add(request):
+
     return HttpResponse('<h1>Student Add Form</h1>')
 
 
@@ -47,4 +47,3 @@ def students_edit(request, sid):
 
 def students_delete(request, sid):
     return HttpResponse('<h1>Delete Student %s</h1>' % sid)
-
