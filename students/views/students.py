@@ -1,43 +1,24 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
-
-
+from ..models import Students
 # Views for Students
+
+
 def students_list(request):
-    students = ({'id': 1,
-                 'first_name': u'Світлана',
-                 'last_name': u'Подолянчук',
-                 'middle_name': u'Степанівна',
-                 'ticket': 233,
-                 'image': "img/Lana.jpg"
-                 },
-                {'id': 2,
-                 'first_name': u'Наталя',
-                 'last_name': u'Клюха',
-                 'middle_name': u'Володимирівна',
-                 'ticket': 256,
-                 'image': "img/Nata.jpg"
-                 },
-                {'id': 3,
-                 'first_name': u'Максим',
-                 'last_name': u'Девда',
-                 'middle_name': u'Петрович',
-                 'ticket': 248,
-                 'image': "img/Max.jpg"
-                 },
-                {'id': 4,
-                 'first_name': u'Катерина',
-                 'last_name': u'Денищич',
-                 'middle_name': u'Василівна',
-                 'ticket': 223,
-                 'image': "img/Kate.jpg"},
-                )
+    students = Students.objects.all()
+
+    #try to order students list
+    order_by = request.GET.get('order_by', '')
+    if order_by in ('first_name', 'last_name', 'ticket_number'):
+        students = students.order_by(order_by)
+        if request.GET.get('reverse', '') == '1':
+            students = students.reverse()
+
     return render(request, 'students/students_list.html', {'students': students})
 
 
 def students_add(request):
-
     return HttpResponse('<h1>Student Add Form</h1>')
 
 

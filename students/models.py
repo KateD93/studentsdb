@@ -54,5 +54,5 @@ class Students(models.Model):
         verbose_name=u"Нотатки"
     )
 
-    def __repr__(self):
-        return '{}{}'.format(self.first_name, self.last_name)
+    def __unicode__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
