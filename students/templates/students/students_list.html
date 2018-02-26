@@ -12,29 +12,35 @@
 
 <!-- Start Students Listing -->
         <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th>№</th>
-              <th>Фото</th>
-              <th><a href= "{% url "home" %}?order_by=last_name">
-                  Прізвище
-                  {% if request.GET.order_by=="last_name" %} &uarr; {% endif %}
-                  </a>
-              </th>
-              <th><a href= "{% url "home" %}?order_by=first_name">
-                  Ім’я
-                  {% if request.GET.order_by=="first_name" %} &uarr; {% endif %}
-                  </a>
-              </th>
-              <th><a href= "{% url "home" %}?order_by=middle_name"> По батькові </a></th>
-              <th><a href= "{% url "home" %}?order_by=ticket_number">
-                  № білету
-                  {% if request.GET.order_by == "ticket_number" %} &uarr; {% endif %}
-                  </a>
-              </th>
-              <th> Дії </th>
-            </tr>
-          </thead>
+            {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+              <thead>
+                <tr>
+                  <th>№</th>
+                  <th>Фото</th>
+                  <th><a href= "{% url "home" %}?order_by=last_name">
+                      Прізвище
+                      {% if order_by == "last_name" and reverse != '1' %} &uarr;
+                      {% elif order_by == "last_name" and reverse == '1' %} &darr;
+                      {% endif %}
+                      </a>
+                  </th>
+                  <th><a href= "{% url "home" %}?order_by=first_name{% if order_by == "first_name" and reverse == '1' %}&amp;
+                      reverse=1 {% endif %}"</a>
+                      Ім’я
+                      {% if order_by == "first_name" and reverse != '1' %} &uarr;
+                      {% elif order_by == "last_name" and reverse == '1' %} &darr;
+                      {% endif %}
+                  </th>
+                  <th><a href= "{% url "home" %}?order_by=middle_name"> По батькові</a></th>
+                  <th><a href= "{% url "home" %}?order_by=ticket_number">
+                      № білету
+                      {% if order_by == "ticket_number" %} &uarr; {% endif %}
+                      </a>
+                  </th>
+                  <th> Дії </th>
+                </tr>
+              </thead>
+            {% endwith %}
           <tbody>
             {% for student in students %}
             <tr>
@@ -49,7 +55,7 @@
               <td><a href='{% url "students_edit" student.id %}'> {{ student.first_name }} </td>
               <td><a href='{% url "students_edit" student.id %}'> {{ student.middle_name }} </td>
               <td>{{ student.ticket }}</td>
-              <td>
+               <td>
                   <div class="btn-group">
                     <button type="button"
                         class="btn btn-default dropdown-toggle"
@@ -63,7 +69,7 @@
                     </ul>
                   </div>
               </td>
-            </tr>
+             </tr>
             {% endfor %}
           </tbody>
         </table>
